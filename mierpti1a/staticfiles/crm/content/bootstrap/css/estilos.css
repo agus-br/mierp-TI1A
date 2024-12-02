@@ -1,0 +1,155 @@
+
+  
+  .chat-container {
+    width: 90%; /* Ancho relativo al contenedor padre */
+    max-width: 700px; /* Ancho máximo */
+    margin: 20px auto;
+    background-color: #242526;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .chat-header {
+    background-color: #3A3B3C;
+    color: #E4E6EB;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .online-count {
+    color: #b9bbbe;
+    font-size: 14px;
+  }
+  
+  .chat-body {
+    padding: 20px;
+    height: 300px; /* Altura fija, se puede ajustar con media queries */
+    overflow-y: scroll;
+  }
+  
+  .message {
+    margin-bottom: 15px;
+  }
+  
+  .message .user {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .message .user img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .message .user .name {
+    font-weight: bold;
+    color: #E4E6EB;
+  }
+  
+  .message .text {
+    color: #E4E6EB;
+    margin-top: 5px;
+    background-color: #3A3B3C;
+    padding: 10px;
+    border-radius: 5px;
+    word-break: break-word; /* Ajustar el texto a varias líneas */
+  }
+  
+  .message.me .text {
+    color: white;
+    text-align: right;
+    background-color: #0084FF;
+    word-break: break-word;
+  }
+  
+  .chat-footer {
+    background-color: #3A3B3C;
+    padding: 10px;
+  }
+  
+  .chat-footer input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #242526;
+    color: #E4E6EB;
+  }
+  
+  /* Media Queries para ajustar a diferentes tamaños de pantalla */
+  @media (max-width: 500px) { 
+    .chat-container {
+      width: 100%; /* Ocupar todo el ancho en pantallas pequeñas */
+      margin: 10px; 
+    }
+  
+    .chat-body {
+      height: 250px; /* Ajustar la altura en pantallas pequeñas */
+    }
+  }
+
+
+  /* Estilos para los mensajes */
+.message-item {
+    display: flex;
+    align-items: flex-start; 
+    margin-bottom: 10px; 
+  }
+  
+  .message-item--right { /* Mensajes del usuario actual */
+    justify-content: flex-end; 
+  }
+  
+  .message-user { /* Contenedor de la imagen de usuario */
+    margin-right: 10px; 
+  }
+  
+  .user-avatar img { /* Imagen de usuario */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover; 
+  }
+  
+  .message-bubble { /* Burbuja del mensaje */
+    background-color: #3A3B3C; 
+    color: #E4E6EB;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 75%; 
+    word-break: break-word; 
+  }
+  
+  .message-bubble--right { /* Burbuja del mensaje del usuario actual */
+    background-color: #0084FF; 
+    color: white;
+  }
+  
+  .message-arrow { /* Flecha del mensaje */
+    fill: white; 
+    margin-left: 5px; 
+  }
+  
+  .message-arrow--right { /* Flecha del mensaje del usuario actual */
+    fill: #bbf7d0; 
+    margin-right: 5px; 
+    transform: scaleX(-1); /* Invertir la flecha horizontalmente */
+  }
+  
+  .message-info { /* Información del usuario */
+    margin-left: 10px; 
+    font-size: 0.8em; 
+  }
+  
+  .message-info__name { /* Nombre del usuario */
+    color: #E4E6EB; 
+    font-weight: bold; 
+  }
+  
+  .message-info__username { /* Nombre de usuario */
+    color: #b9bbbe; 
+  }

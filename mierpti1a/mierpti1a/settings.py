@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'crm',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_htmx.middleware.HtmxMiddleware',  # Añádelo aquí
+
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -83,7 +86,17 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mierpti1a.wsgi.application'
+#WSGI_APPLICATION = 'mierpti1a.wsgi.application'
+
+ASGI_APPLICATION = 'mierpti1a.asgi.application'
+
+
+CHANNEL_LAYERS = {
+    'default': {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+    }
+}
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
